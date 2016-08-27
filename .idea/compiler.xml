@@ -23,10 +23,12 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="DoctorAdministrationPanel" />
+        <module name="doctoradministrationpanel" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="DoctorAdministrationPanel" target="1.7" />
+      <module name="doctoradministrationpanel" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
