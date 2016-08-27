@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="4fb4e0af-53b5-4a6d-98a2-94b8a69acdbe" name="Hetzner" url="http://138.201.190.37">
+        <fileTransfer host="138.201.190.37" port="22" rootFolder="/root" accessType="SFTP" password="dffcdfdddfdfdfe2dfffdf9cdff9dfe1dfccdfc4dfebdff0dff3dfc9" username="root">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
