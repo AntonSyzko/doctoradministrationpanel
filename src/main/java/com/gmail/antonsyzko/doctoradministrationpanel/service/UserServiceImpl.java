@@ -34,18 +34,10 @@ public class UserServiceImpl implements UserService {
 	public void saveUser(User user) {
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
 
-
-
-
 		dao.save(user);
 	}
 
 
-	/*
-	 * Since the method is running with Transaction, No need to call hibernate update explicitly.
-	 * Just fetch the entity from db and update it with proper values within transaction.
-	 * It will be updated in db once transaction ends. 
-	 */
 	public void updateUser(User user) {
 		User entity = dao.findById(user.getId());
 		if (entity != null) {
@@ -60,7 +52,6 @@ public class UserServiceImpl implements UserService {
 			entity.setJoining_date(user.getJoining_date());
 			entity.setDescription(user.getDescription());
 
-			//added from uploads
 			entity.setUserDocuments(user.getUserDocuments());
 
 			entity.setUserProfiles(user.getUserProfiles());
@@ -68,11 +59,9 @@ public class UserServiceImpl implements UserService {
 	}
 
 
-
 	public void deleteUserBySSO(String sso) {
 		dao.deleteBySSO(sso);
 	}
-
 
 
 	public List<User> findAllUsers() {
@@ -83,24 +72,5 @@ public class UserServiceImpl implements UserService {
 		User user = findBySSO(sso);
 		return ( user == null || ((id != null) && (user.getId() == id)));
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

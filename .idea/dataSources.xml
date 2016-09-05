@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="2352430104">
+  <component name="DataSourceManagerImpl" format="xml" hash="1613224096">
     <data-source source="LOCAL" name="MySQL - doctorAdministrationPanel@localhost" uuid="60be0ac7-624d-43dd-800f-899ae80d7d80">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
@@ -20,7 +20,6 @@
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://eu-cdbr-west-01.cleardb.com:3306/heroku_d527e0e433281ba</jdbc-url>
-
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="convertToNull" />

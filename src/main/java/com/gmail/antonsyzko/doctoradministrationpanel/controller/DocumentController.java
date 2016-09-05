@@ -28,7 +28,6 @@ import javax.validation.Valid;
 import java.io.IOException;
 import java.util.List;
 
-
 @Controller
 @RequestMapping("/")
 @SessionAttributes("roles")
@@ -37,16 +36,11 @@ public class DocumentController {
     @Autowired
     UserService userService;
 
-
-
-
     @Autowired
     UserProfileService userProfileService;
 
     @Autowired
     MessageSource messageSource;
-
-
 
     @Autowired
     PersistentTokenBasedRememberMeServices persistentTokenBasedRememberMeServices;
@@ -54,11 +48,8 @@ public class DocumentController {
     @Autowired
     AuthenticationTrustResolver authenticationTrustResolver;
 
-
     @Autowired
     UserDocumentService userDocumentService;
-
-
 
     @Autowired
     FileValidator fileValidator;
@@ -67,12 +58,6 @@ public class DocumentController {
     protected void initBinder(WebDataBinder binder) {
         binder.setValidator(fileValidator);
     }
-
-    /**
-     * This method will list all existing users.
-     */
-
-
 
     @RequestMapping(value = { "/add-document-{userId}" }, method = RequestMethod.GET)
     public String addDocuments(@PathVariable int userId, ModelMap model) {
@@ -87,7 +72,6 @@ public class DocumentController {
 
         return "managedocuments";
     }
-
 
     @RequestMapping(value = { "/download-document-{userId}-{docId}" }, method = RequestMethod.GET)
     public String downloadDocument(@PathVariable int userId, @PathVariable int docId, HttpServletResponse response) throws IOException {

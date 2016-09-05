@@ -17,8 +17,6 @@ public class User implements Serializable{
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 
-
-
 	@NotEmpty
 	@Column(name="SSO_ID", unique=true, nullable=false)
 	private String ssoId;
@@ -32,15 +30,9 @@ public class User implements Serializable{
 	@Column(name="FIRST_NAME", nullable=false)
 	private String firstName;
 
-
-
-
 	@NotEmpty
 	@Column(name="LAST_NAME", nullable=false)
 	private String lastName;
-
-
-
 
 
 	@NotEmpty
@@ -54,7 +46,7 @@ public class User implements Serializable{
 
 	@NotNull
 	@Column(name = "joining_date",nullable = false)
-	@DateTimeFormat(pattern="yyyy-MM-dd")
+	@DateTimeFormat(pattern="yy-MM-dd")
 	@Temporal(TemporalType.DATE)
 	private Date joining_date;
 
@@ -62,8 +54,6 @@ public class User implements Serializable{
 	@NotNull
 	@Column(name = "description", nullable = false)
 	private String description;
-
-
 
 	@NotEmpty
 	@ManyToMany(fetch = FetchType.LAZY)
@@ -184,11 +174,6 @@ public class User implements Serializable{
 		return true;
 	}
 
-	/*
-	 * DO-NOT-INCLUDE passwords in toString function.
-	 * It is done here just for convenience purpose.
-	 */
-
 	@Override
 	public String toString() {
 		return "User{" +
@@ -206,7 +191,6 @@ public class User implements Serializable{
 				'}';
 	}
 
-	//added From Uploads
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private Set<UserDocument> userDocuments = new HashSet<UserDocument>();
 
@@ -218,7 +202,5 @@ public class User implements Serializable{
 	public void setUserDocuments(Set<UserDocument> userDocuments) {
 		this.userDocuments = userDocuments;
 	}
-
-
 
 }

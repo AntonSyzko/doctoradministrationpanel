@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page isELIgnored="false"%>
 <%@ page isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
@@ -13,9 +14,8 @@
 
 <link href="<c:url value='/static/css/bootstrap.css' />"  rel="stylesheet"></link>
 <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
-
-
-
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script src="/static/js/g_map.js" type="text/javascript"></script>
 
 <body class="w3-container w3-section w3-green">
 
@@ -65,8 +65,6 @@
         </div>
     </div>
 </div>
-<%--<img src="doctora.jpg" alt="Car" style="width:50%">--%>
-
 
 <div class="w3-container w3-section w3-green">
     <p style="margin-left: 80%">&#169 developed by  <a href="mailto:antonsyzko@gmail.com"> antonsyzko@gmail.com</a></p>
@@ -74,6 +72,7 @@
    <button style="font-size:24px;color: #00bcd4;"  onclick="location.href = 'https://github.com/AntonSyzko/doctoradministrationpanel';" alt="View Anton Syzko's profile on GitHub">Code on GITHUB <i class="fa fa-github-square"></i></button>
     <h2><span class="glyphicon glyphicon-earphone"></span>     (+351)91611142 Rua capitaes de Abril 13-4ESQ 2650 - 352 Alfornelos Lisbon</h2>
 </div>
+<div id="googleMap" style="width:1230px;height:150px; border: double; "></div>
 
 
 </body>

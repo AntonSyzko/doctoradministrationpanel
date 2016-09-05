@@ -28,7 +28,6 @@ public class EmailUtil {
         try
         {
             MimeMessage msg = new MimeMessage(session);
-            //set message headers
             msg.addHeader("Content-type", "text/HTML; charset=UTF-8");
             msg.addHeader("format", "flowed");
             msg.addHeader("Content-Transfer-Encoding", "8bit");
@@ -54,11 +53,6 @@ public class EmailUtil {
         }
     }
 
-
-
-
-
-
     public static void sendAttachmentEmail(Session session, String toEmail, String subject, String body){
         try{
             MimeMessage msg = new MimeMessage(session);
@@ -76,19 +70,14 @@ public class EmailUtil {
 
             msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail, false));
 
-            // Create the message body part
             BodyPart messageBodyPart = new MimeBodyPart();
 
-            // Fill the message
             messageBodyPart.setText(body);
 
-            // Create a multipart message for attachment
             Multipart multipart = new MimeMultipart();
 
-            // Set text message part
             multipart.addBodyPart(messageBodyPart);
 
-            // Second part is attachment
             messageBodyPart = new MimeBodyPart();
             String filename = "D:\\IdeaProjects\\ExperimentingAllInOneDotora\\src\\main\\resources\\EnablePOPGmail";
             DataSource source = new FileDataSource(filename);
@@ -96,10 +85,8 @@ public class EmailUtil {
             messageBodyPart.setFileName(filename);
             multipart.addBodyPart(messageBodyPart);
 
-            // Send the complete message parts
             msg.setContent(multipart);
 
-            // Send message
             Transport.send(msg);
             System.out.println("EMail Sent Successfully with attachment!!");
         }catch (MessagingException e) {
@@ -108,9 +95,6 @@ public class EmailUtil {
             e.printStackTrace();
         }
     }
-
-
-
 
 
     public static void sendImageEmail(Session session, String toEmail, String subject, String body){
@@ -135,33 +119,25 @@ public class EmailUtil {
 
             messageBodyPart.setText(body);
 
-            // Create a multipart message for attachment
             Multipart multipart = new MimeMultipart();
 
-            // Set text message part
             multipart.addBodyPart(messageBodyPart);
 
-            // Second part is image attachment
             messageBodyPart = new MimeBodyPart();
             String filename = "D:\\IdeaProjects\\DoctorAdministrationPanel\\src\\main\\webapp\\static\\css\\healthcare222.jpg";
             DataSource source = new FileDataSource(filename);
             messageBodyPart.setDataHandler(new DataHandler(source));
             messageBodyPart.setFileName(filename);
-            //Trick is to add the content-id header here
             messageBodyPart.setHeader("Content-ID", "image_id");
             multipart.addBodyPart(messageBodyPart);
 
-            //third part for displaying image in the email body
             messageBodyPart = new MimeBodyPart();
-            //<img src='cid:image_id'>"
             messageBodyPart.setContent("<h1>You Are Welcome to Doctor Admin Panel</h1>" +
                     "<img src='D:\\IdeaProjects\\DoctorAdministrationPanel\\src\\main\\webapp\\static\\css\\healthcare222.jpg'>", "text/html");
             multipart.addBodyPart(messageBodyPart);
 
-            //Set the multipart message to the email message
             msg.setContent(multipart);
 
-            // Send message
             Transport.send(msg);
             System.out.println("EMail Sent Successfully with image!!");
         }catch (MessagingException e) {
@@ -170,7 +146,5 @@ public class EmailUtil {
             e.printStackTrace();
         }
     }
-
-
 
 }

@@ -33,8 +33,6 @@ public class HibernateConfiguration {
         return sessionFactory;
      }
 
-
-	
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -45,10 +43,6 @@ public class HibernateConfiguration {
         return dataSource;
     }
 
-
-
-
-    
     private Properties hibernateProperties() {
         Properties properties = new Properties();
         properties.put("hibernate.dialect", environment.getRequiredProperty("hibernate.dialect"));

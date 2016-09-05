@@ -20,7 +20,6 @@ public class UserDocumentDaoImpl extends AbstractDao<Integer, UserDocument> impl
 		persist(document);
 	}
 
-	
 	public UserDocument findById(int id) {
 		return getByKey(id);
 	}
@@ -33,7 +32,6 @@ public class UserDocumentDaoImpl extends AbstractDao<Integer, UserDocument> impl
 		return (List<UserDocument>)crit.list();
 	}
 
-	
 	public void deleteById(int id) {
 		UserDocument document =  getByKey(id);
 		delete(document);
