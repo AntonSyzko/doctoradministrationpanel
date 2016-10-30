@@ -17,7 +17,7 @@ File Uploading - ADMIN / DBA can  upload/download  files ( stored in database )
 Registered user  receives the email with all the  info and attached  files
 <hr/>
 <b style="margin-left: 40%">Getting Started</b><br/>
-   <a href="http://antonsyzkodemo.herokuapp.com/login?logout">Private Doctor Administration Panel</a><br/>
+   <a href="http://antonsyzkodemo.herokuapp.com/login?logout">Private Doctor Administration Panel</a> This App on Heroku Cloud <br/>
 use <b>test</b> for username  and <b>test</b> for password<br/>
 Click Add new patinet - fill in form <br/>
 notification will be sent to new user<br/>
@@ -28,7 +28,7 @@ patients are stored in table ( additional table for each patient's files include
 <hr/>
 
 <b style="margin-left: 40%">DEMO</b><br/>
-<h><a href="http://antonsyzkodemo.herokuapp.com/login?logout">Private Doctor Administration Panel</a></h><br/>
+<h><a href="http://antonsyzkodemo.herokuapp.com/login?logout">Private Doctor Administration Panel</a> This App on Heroku Cloud </h><br/>
 
 
 <hr/>
